@@ -7,14 +7,22 @@ from datetime import datetime
 
 
 
+servicesVersion = {
+
+            'version': "1.2",
+            'author': "Craig Breakspear",
+            'lastupdate': "02-08-2022"
+        }
 
 app = Flask(__name__)
 
+''' JUST A ROUTE TO TEST FOR SUCCESSFUL DEPLOY'''
 @app.route('/')
 def index():
    print('Request for index page received')
    return render_template('index.html')
 
+''' SENDS AN EMAIL TO DATATBASE FOR SUBSCRIPTION ENTRY'''
 @app.route('/requestforSubscription', methods=['POST'])
 def create_subscription():
     task =""
@@ -37,6 +45,12 @@ def create_subscription():
             'email': request.json['email']
         }
         return jsonify({'STATUS': "SUCCESSFUL INSERTION OF: " + task["email"]}), 201
+
+''' RETURNS THE VERSION OF THE SERVICES IT IS CURRENTLY WORKING UNDER'''
+@app.route('/bfsVersion', methods=['GET'])
+def get_servicesversion():
+    
+    return jsonify(servicesVersion), 200
 
 
 
