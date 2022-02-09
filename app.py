@@ -1,7 +1,8 @@
 #!flask/bin/python
+from cProfile import run
 import pyodbc
 import sys
-from flask import Flask, jsonify, request, abort
+from flask import Flask, jsonify, request, abort, render_template
 from datetime import datetime
 
 
@@ -9,7 +10,10 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-
+@app.route('/')
+def index():
+   print('Request for index page received')
+   return render_template('index.html')
 
 @app.route('/requestforSubscription', methods=['POST'])
 def create_subscription():
@@ -41,3 +45,6 @@ def create_subscription():
 def server_error(err):
     app.logger.exception(err)
     return jsonify("{exception: "  + str(err) + "}"), 500
+
+if __name__ == '__main__':
+    app.run()
