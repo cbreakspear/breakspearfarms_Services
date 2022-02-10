@@ -3,6 +3,7 @@ from cProfile import run
 import pyodbc
 import sys
 from flask import Flask, jsonify, request, abort, render_template
+from flask_cors import CORS
 from datetime import datetime
 
 
@@ -15,7 +16,7 @@ servicesVersion = {
         }
 
 app = Flask(__name__)
-
+CORS(app)
 ''' JUST A ROUTE TO TEST FOR SUCCESSFUL DEPLOY'''
 @app.route('/')
 def index():
