@@ -10,9 +10,9 @@ from datetime import datetime
 
 servicesVersion = {
 
-            'version': "1.2",
+            'version': "1.3",
             'author': "Craig Breakspear",
-            'lastupdate': "02-08-2022"
+            'lastupdate': "02-14-2022"
         }
 
 app = Flask(__name__)
@@ -32,8 +32,8 @@ def create_subscription():
             abort(400)
     else:
         now = datetime.now() # current date and time
-        sql = "INSERT INTO dbo.subscription (emailaddress, entry_date) VALUES ('" + request.json['email'] + \
-            "','" + str(now) + "')"
+        sql = "INSERT INTO dbo.subscription (emailaddress, entry_date, insert_type) VALUES ('" + request.json['email'] + \
+            "','" + str(now) + "','" + request.json['inserttype'] + "')"
         cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};Server=tcp:breakspearfarms.database.windows.net;Database=breakspearfarmsDB;Port=1433;uid=cbreakspear;pwd=Destination2060')
         cursor = cnxn.cursor()
         cursor.execute(sql)
@@ -43,9 +43,10 @@ def create_subscription():
         task = {
 
             'customername': request.json['customername'],
-            'email': request.json['email']
+            'email': request.json['email'],
+            'inserttype': request.json['inserttype']
         }
-        return jsonify({'STATUS': "SUCCESSFUL INSERTION OF: " + task["email"]}), 201
+        return jsonify({'STATUS': "SUCCESSFUL INSERTION OF: " + task["email"] + " for " + task["inserttype"]}), 201
 
 ''' RETURNS THE VERSION OF THE SERVICES IT IS CURRENTLY WORKING UNDER'''
 @app.route('/bfsVersion', methods=['GET'])
