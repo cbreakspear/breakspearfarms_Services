@@ -75,7 +75,20 @@ def get_QOTD():
     'Here is to quitting driking for good and start drinking for evil',
     'Yesterday is history. Tomorrow is a mystery.',
     'The only thing and old man can say to a young man is that life goes fast so fast. The tragedy is the young man will never believe him',
-    'Luck is the residue of hard work.'
+    'Luck is the residue of hard work.',
+    'Here is to those that wish us well....and those who don\'t...can go to hell ',
+    'Here is to father time...time flies when you\'re having rum. ',
+    'To those that know me. Never take advice from me...you\'ll end up drunk ',
+    'You can\'t drink all day if you don\'t start in the morning ',
+    'I feel sorry for those that don\'t drink because when they wake up in the morning that\'s the best they are going to feel all day ',
+    'Alcohol may be man\'s worst enemy, but the bible says love your enemy.',
+    'Age is just a number. It\'s totally irrelevant unless, of course, you happen to be a bottle of wine.',
+    'Time is never wasted when you\'re wasted all the time ',
+    'Here\'s to alcohol, the rose colored glasses of life',
+    'REMEBER. You are braver than you believe, stronger than you seem, and smarter than you think. But most important of all, even if we\'re apart, I\'ll always be with you.',
+    'I\'m sober enough to know what I\'m doing.....But drunk enough to enjoy doing it',
+    'Here is to Cheating, Stealing, Fighting and drinking. If you cheat, May you cheat death. If it\'s stealing, may you steal a womans heart. if you fight, may you fight for a brother. If you drink, may you drink with me',
+    'Here is to the people that follow the masses but don\'t forget, sometimes the M is silent '
     ]
     quote = {'quote': random.choice(quotes_list)}
     print('Request for index page received')
