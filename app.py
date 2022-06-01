@@ -2,6 +2,8 @@
 from cProfile import run
 import pyodbc
 import sys
+import json
+import random
 from flask import Flask, jsonify, request, abort, render_template
 from flask_cors import CORS
 from datetime import datetime
@@ -54,7 +56,15 @@ def get_servicesversion():
     
     return jsonify(servicesVersion), 200
 
-
+''' RETURNS THE A QUOTE OF THE DAY. RANDOM REALLY :)'''
+@app.route('/QOTD', methods=['GET'])
+def get_QOTD():
+    quotes_list = ['The Godfather', 
+    'The Wizard of Oz', 
+    'Citizen Kane', 
+    'The Shawshank Redemption', 
+    'Pulp Fiction']
+    return jsonify(random.choice(quotes_list)), 200
 
 #HANDLE ERRORS    
 @app.errorhandler(Exception)
