@@ -59,12 +59,27 @@ def get_servicesversion():
 ''' RETURNS THE A QUOTE OF THE DAY. RANDOM REALLY :)'''
 @app.route('/QOTD', methods=['GET'])
 def get_QOTD():
-    quotes_list = ['The Godfather', 
-    'The Wizard of Oz', 
-    'Citizen Kane', 
-    'The Shawshank Redemption', 
-    'Pulp Fiction']
-    return jsonify(random.choice(quotes_list)), 200
+    quotes_list = ['Life is what happens when you’re busy making other plans.”', 
+    'Get busy living or get busy dying.', 
+    'You only live once, but if you do it right, once is enough.', 
+    'Many of life’s failures are people who did not realize how close they were to success when they gave up.', 
+    'If you want to live a happy life, tie it to a goal, not to people or things.',
+    'Not how long, but how well you have lived is the main thing.',
+    'Self-praise is for losers. Be a winner. Stand for something. Always have class, and be humble.',
+    'Stay true in the dark & humble in the spotlight.',
+    'Keep putting out good. It will come back to you tenfold in unexpected ways.',
+    'Here is to the nights we\'ll never remember and to the friends we\'ll never forget ',
+    'Tequila may not be the answer but it\s worth a shot ',
+    'ashes to ashes dust to dust when life is a bitch, beer is a must ',
+    'Life is not a fairytail... If you lose your shoe at midnight...You\'re drunk  ',
+    'Here is to quitting driking for good and start drinking for evil',
+    'Yesterday is history. Tomorrow is a mystery.',
+    'The only thing and old man can say to a young man is that life goes fast so fast. The tragedy is the young man will never believe him',
+    'Luck is the residue of hard work.'
+    ]
+    quote = {'quote': random.choice(quotes_list)}
+    print('Request for index page received')
+    return jsonify(quote), 200
 
 #HANDLE ERRORS    
 @app.errorhandler(Exception)
