@@ -59,25 +59,25 @@ def get_servicesversion():
 ''' RETURNS THE A QUOTE OF THE DAY. RANDOM REALLY :)'''
 @app.route('/QOTD', methods=['GET'])
 def get_QOTD():
-    quotes_list = ['Life is what happens when you’re busy making other plans.”', 
-    'Get busy living or get busy dying.', 
-    'You only live once, but if you do it right, once is enough.', 
-    'Many of life’s failures are people who did not realize how close they were to success when they gave up.', 
-    'If you want to live a happy life, tie it to a goal, not to people or things.',
-    'Not how long, but how well you have lived is the main thing.',
-    'Self-praise is for losers. Be a winner. Stand for something. Always have class, and be humble.',
-    'Stay true in the dark & humble in the spotlight.',
-    'Keep putting out good. It will come back to you tenfold in unexpected ways.',
-    'Here is to the nights we\'ll never remember and to the friends we\'ll never forget ',
-    'Tequila may not be the answer but it\s worth a shot ',
-    'ashes to ashes dust to dust when life is a bitch, beer is a must ',
-    'Life is not a fairytail... If you lose your shoe at midnight...You\'re drunk  ',
-    'Here is to quitting driking for good and start drinking for evil',
-    'Yesterday is history. Tomorrow is a mystery.',
+    quotes_list = ['Life is what happens when you’re busy making other plans.:John Lennon', 
+    'Get busy living or get busy dying.:John Lennon', 
+    'You only live once, but if you do it right, once is enough.:TED Lennon', 
+    'Many of life’s failures are people who did not realize how close they were to success when they gave up.:John Lennon', 
+    'If you want to live a happy life, tie it to a goal, not to people or things.:TED Lennon',
+    'Not how long, but how well you have lived is the main thing.:John Lennon',
+    'Self-praise is for losers. Be a winner. Stand for something. Always have class, and be humble.:TED Lennon',
+    'Stay true in the dark & humble in the spotlight.:John Lennon',
+    'Keep putting out good. It will come back to you tenfold in unexpected ways.:TED Lennon',
+    'Here is to the nights we\'ll never remember and to the friends we\'ll never forget :John Lennon',
+    'Tequila may not be the answer but it\s worth a shot :TED Lennon',
+    'ashes to ashes dust to dust when life is a bitch, beer is a must :John Lennon',
+    'Life is not a fairytail... If you lose your shoe at midnight...You\'re drunk :TED Lennon ',
+    'Here is to quitting driking for good and start drinking for evil:John Lennon',
+    'Yesterday is history. Tomorrow is a mystery.:TED Lennon',
     'The only thing and old man can say to a young man is that life goes fast so fast. The tragedy is the young man will never believe him',
-    'Luck is the residue of hard work.',
-    'Here is to those that wish us well....and those who don\'t...can go to hell ',
-    'Here is to father time...time flies when you\'re having rum. ',
+    'Luck is the residue of hard work.:John Lennon',
+    'Here is to those that wish us well....and those who don\'t...can go to hell:TED Lennon ',
+    'Here is to father time...time flies when you\'re having rum.:John Lennon ',
     'To those that know me. Never take advice from me...you\'ll end up drunk ',
     'You can\'t drink all day if you don\'t start in the morning ',
     'I feel sorry for those that don\'t drink because when they wake up in the morning that\'s the best they are going to feel all day ',
@@ -91,7 +91,7 @@ def get_QOTD():
     'Here is to the people that follow the masses but don\'t forget, sometimes the M is silent '
     ]
     quote = {'quote': random.choice(quotes_list)}
-    print('Request for index page received')
+    print('Request for Quote Received')
     return jsonify(quote), 200
 
 #HANDLE ERRORS    
